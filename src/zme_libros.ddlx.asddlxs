@@ -1,0 +1,41 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Libro',
+    typeNamePlural: 'Libros',
+    typeImageUrl: '',
+    title: {
+        type: #STANDARD,
+        value: 'Titulo'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'Autor'
+    }
+}
+annotate entity ZC_LIBROS_4112
+    with 
+{
+    @UI.lineItem: [{ position: 10 }]
+    Titulo;
+    
+    @UI.lineItem: [{ position: 20 }]
+    Autor;
+    
+    @UI.lineItem: [{ position: 30 }]
+    Editorial;
+    
+    @UI.lineItem: [{ position: 40 }]
+    Idioma;
+    
+    @UI.lineItem: [{ position: 50 }]
+    Paginas;
+    
+    @UI.lineItem: [{ position: 60 }]
+    Moneda;
+    
+    @UI.lineItem: [{ position: 70 }]
+    Formato;
+    
+    @UI.lineItem: [{ position: 80 }]
+    Url;
+}
