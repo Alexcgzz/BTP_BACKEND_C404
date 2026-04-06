@@ -2,7 +2,6 @@
 @UI.headerInfo: {
     typeName: 'Libro',
     typeNamePlural: 'Libros',
-    typeImageUrl: '',
     title: {
         type: #STANDARD,
         value: 'Titulo'
@@ -15,27 +14,60 @@
 annotate entity ZC_LIBROS_4112
     with 
 {
+
+    @UI.facet: [
+        { 
+            id: 'LibroTabs',
+            type: #COLLECTION,
+            label: 'Informacion del libro',
+            position: 10
+        },
+        { 
+            id: 'DatosLibro',
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'Detalle del libro',
+            position: 10
+        },
+        { 
+            id: 'ClientesLibro',
+            type: #LINEITEM_REFERENCE,
+            label: 'Clientes que adquirieron el libro',
+            position: 20,
+            targetElement: '_Clientes'
+        }
+    ]
+    
+    @UI.selectionField: [{ position: 10 }]
     @UI.lineItem: [{ position: 10 }]
+    @UI.identification: [{ position: 10 }]
     Titulo;
     
     @UI.lineItem: [{ position: 20 }]
+    @UI.identification: [{ position: 20 }]
     Autor;
     
+    @UI.selectionField: [{ position: 20 }]
     @UI.lineItem: [{ position: 30 }]
+    @UI.identification: [{ position: 30 }]
     Editorial;
     
-    @UI.lineItem: [{ position: 40 }]
+    @UI.identification: [{ position: 40 }]
     Idioma;
     
-    @UI.lineItem: [{ position: 50 }]
+    @UI.identification: [{ position: 50 }]
     Paginas;
     
-    @UI.lineItem: [{ position: 60 }]
+    @UI.identification: [{ position: 60 }]
     Moneda;
     
-    @UI.lineItem: [{ position: 70 }]
+    @UI.identification: [{ position: 70 }]
     Formato;
     
-    @UI.lineItem: [{ position: 80 }]
+    @UI.identification: [{ position: 80 }]
     Url;
+    
+    @UI.selectionField: [{ position: 30 }]
+    @UI.identification: [{ position: 90 }]
+    BiCateg;
+
 }
