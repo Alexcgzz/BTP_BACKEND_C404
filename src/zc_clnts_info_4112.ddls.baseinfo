@@ -3,13 +3,10 @@
 {
 "FROM":
 [
-"ZTB_CLIENTES_4",
-"ZTB_CLNTS_LIB_4"
+"ZTB_CLIENTES_4"
 ],
 "ASSOCIATED":
-[
-"ZC_CLNTS_INFO_4112"
-],
+[],
 "BASE":
 [],
 "ANNO_REF":

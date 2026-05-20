@@ -7,6 +7,7 @@
 define view entity ZC_LIBROS_4112 as select from ztb_libros_4112 as L
     association [0..1] to ZC_CATEGO_4112    as _Categoria on $projection.BiCateg = _Categoria.BiCateg
     association [0..*] to ZC_CLNTS_LIB_4112 as _Clientes  on $projection.IdLibro = _Clientes.IdLibro
+    association [0..1] to ZC_VENTAS_4112 as _Ventas on $projection.IdLibro = _Ventas.IdLibro
     
 {
     key L.id_libro as IdLibro,
@@ -29,6 +30,16 @@ define view entity ZC_LIBROS_4112 as select from ztb_libros_4112 as L
         L.formato as Formato,
         L.url as Url,
         
+        coalesce( _Ventas.Ventas, 0 ) as Ventas,
+
+        case
+          when coalesce( _Ventas.Ventas, 0 ) = 0 then 1
+          when coalesce( _Ventas.Ventas, 0 ) <= 2 then 2
+          when coalesce( _Ventas.Ventas, 0 ) <= 5 then 3
+          else 3
+        end as CriticidadVentas,
+        
         _Categoria,
-        _Clientes
+        _Clientes,
+        _Ventas
 }

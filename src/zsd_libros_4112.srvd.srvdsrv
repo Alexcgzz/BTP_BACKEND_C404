@@ -1,4 +1,7 @@
 @EndUserText.label: 'Service Definition Libros'
 define service ZSD_LIBROS_4112 {
-  expose ZC_LIBROS_4112 as Books;
+  expose ZC_LIBROS_4112     as Books;
+  expose ZC_CATEGO_4112     as Categorias;
+  expose ZC_CLNTS_LIB_4112  as ClientesLibro;
+  expose ZC_CLNTS_INFO_4112 as ClienteDetalle;
 }
